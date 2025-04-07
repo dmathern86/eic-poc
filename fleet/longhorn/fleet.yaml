@@ -1,6 +1,6 @@
 defaultNamespace: longhorn-system
 helm:
-  repo: https://charts.longhorn.io
+  repo: https://charts.rancher.io
   chart: longhorn
   version: v1.8.1
   releaseName: longhorn
