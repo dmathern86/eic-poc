@@ -1,6 +1,12 @@
 defaultNamespace: metallb
 helm:
-  repo: oci://dp.apps.rancher.io/charts/metallb
-  chart: metallb
+  chart: oci://dp.apps.rancher.io/charts/metallb
   version: 0.14.9
   releaseName: metallb
+  values:
+    image:
+      pullPolicy: IfNotPresent
+      registry: dp.apps.rancher.io
+      repository: containers/metallb
+      sha: ''
+      tag: 0.14.9 # This may change depending on your version of the Chart
