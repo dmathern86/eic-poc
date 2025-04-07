@@ -1,0 +1,30 @@
+defaultNamespace: longhorn-system
+
+labels:
+  app: longhorn
+
+# Custom helm options
+helm:
+  releaseName: longhorn
+  chart: longhorn
+  repo: https://charts.rancher.io
+  version: 106.1.0+up1.7.2
+  values:
+    networkPolicies:
+      enabled: true
+    defaultSettings:
+      priorityClass: system-node-critical
+      allowVolumeCreationWithDegradedAvailability: false
+      concurrentAutomaticEngineUpgradePerNodeLimit: 3
+      # Disable Overprovisioning
+      storageOverProvisioningPercentage: 100
+      storageMinimalAvailablePercentage: 10
+      # Disable calls to https://longhorn-upgrade-responder.rancher.io
+      upgradeChecker: false
+      # Detect Hard Disk Errors more often
+      snapshotDataIntegrityCronjob: "30 1 * * *"
+
+dependsOn:
+  - selector:
+      matchLabels:
+        app: longhorn-crd
