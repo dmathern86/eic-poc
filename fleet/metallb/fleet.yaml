@@ -1,6 +1,6 @@
 defaultNamespace: metallb
 helm:
-  repo: https://dp.apps.rancher.io
+  repo: oci://dp.apps.rancher.io/charts
   chart: longhorn
   version: 0.14.9
   releaseName: metallb
