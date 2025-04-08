@@ -16,3 +16,5 @@ diff:
     operations:
     - {"op": "remove", "path":"/spec/conversion/webhook/clientConfig/caBundle"}
 
+resources:
+  - secret.yaml
