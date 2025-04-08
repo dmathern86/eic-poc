@@ -3,9 +3,6 @@ helm:
   chart: oci://dp.apps.rancher.io/charts/metallb
   version: 0.14.9
   releaseName: metallb
-  values:
-    imagePullSecrets:
-      - name: application-collection
 
 diff:
   comparePatches:
