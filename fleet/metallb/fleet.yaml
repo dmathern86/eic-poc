@@ -15,6 +15,3 @@ diff:
     name: bgppeers.metallb.io
     operations:
     - {"op": "remove", "path":"/spec/conversion/webhook/clientConfig/caBundle"}
-
-resources:
-  - secret.yaml
